@@ -92,7 +92,6 @@ csolver_aclausezt(CSolver * s, int * lits){
 	vec<Lit> lit_vec;
 	int var;
 	while(*lits){
-		lit_vec.push(mkLit((*lits++) - 1));
 		var = abs(*lits) - 1;
         while (var >= w->nVars()) w->newVar();
         lit_vec.push((*lits > 0) ? mkLit(var) : ~mkLit(var));
