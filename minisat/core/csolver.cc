@@ -104,7 +104,7 @@ csolver_aclausezt(CSolver * s, int * lits){
 int
 csolver_val(CSolver * s, int lit){
 	Solver * w = (Solver *) s;
-	return toInt(w->value(lit - 1));
+	return toInt(w->modelValue((Var) (lit - 1))) ? -1 : 1;
 }
 
 const struct clibrary LibCSolver = {
