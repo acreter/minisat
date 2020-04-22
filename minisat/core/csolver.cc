@@ -7,16 +7,16 @@ extern "C" {
 
 #include "csolver.h"
 
-int
-csolver_init(CSolver * s){
-	s = (CSolver*) new Solver ();
-	return 1;
+CSolver*
+csolver_init(){
+	CSolver* s = (CSolver*) new Solver ();
+	return s;
 }
 
-int
+CSolver*
 csolver_reset(CSolver * s){
 	delete (Solver *) s;
-	return csolver_init(s);
+	return csolver_init();
 }
 
 void
